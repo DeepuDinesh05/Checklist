@@ -14,3 +14,4 @@ It was created as a personal project/tool to assist me with my game development 
 - Import Tasks from text files
 - Try to implement saving tasks, maybe using cookies
 - Export tasks
+- Light Theme/Dark Theme toggle
