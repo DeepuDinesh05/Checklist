@@ -1,0 +1,54 @@
+/* ---------- BODY ---------- */
+
+body {
+    background-image: "C:/Users/deeps/Desktop/wallpaper.png";
+}
+
+body, h1, h3 
+{
+    font-family: 'Space Grotesk', calibri;
+}
+
+p
+{
+    font-size: 1.1em;
+    font-family: 'Space Grotesk', calibri;
+}
+
+section
+{
+    padding-top: 2em;
+}
+
+.delete-btn-img
+{
+    transition: transform 0.2s ease;
+}
+
+.delete-btn-img:hover
+{
+    transform: scale(1.3);
+    fill: #D9534F;
+}
+
+.list-group-item
+{
+    transition: transform 0.2s ease;
+}
+
+.list-group-item:hover
+{
+    transform: scale(1.1);
+    /* background-color: #F0AD4E !important; */
+}
+
+.form-check-input {
+    background-color: whitesmoke; /* Light gray color */
+    border-color: whitesmoke; /* Matching border color */
+}
+
+.form-check-input:checked {
+    background-color: #1A84B0; /* Light gray color */
+    border-color: #1A84B0; /* Matching border color */
+}
+

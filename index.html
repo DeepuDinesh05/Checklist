@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+
+  <!-- Bootswatch theme via CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootswatch@5.3.7/dist/lux/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <div class="container py-5">
+    <!-- Title -->
+    <header class="text-center mb-4">
+      <h1>To-Do List</h1>
+      <p class="lead">Manage your tasks efficiently</p>
+    </header>
+
+    <!-- To-Do List Card -->
+    <section>
+      <div class="row justify-content-center">
+        <div class="col-12 col-sm-9 col-md-7 col-lg-4 mb-3">
+          
+          <div class="card border-secondary mb-3 shadow-lg">
+            
+            <div class="card-header text-center bg-primary text-white">
+              <h5 class="mb-0">Tasks</h5>
+            </div>
+
+            <div class="card-body">
+
+              <!-- Input to add new task -->
+              <div class="mb-3 input-group">
+                <input type="text" id="new-task-input" class="form-control" placeholder="Add a new task..." />
+                <button id="add-task-btn" class="btn btn-success">Add Task</button>
+              </div>
+
+              <!-- Import / Export -->
+              <p class="mb-3 mr-2 mt-3" style="text-align: center;">
+                <button id="add-task-btn" class="btn btn-warning rounded-1">Import Tasks</button>
+                <button id="add-task-btn" class="btn btn-danger rounded-1">Export Tasks</button>
+              </p>
+
+              <!-- To-Do List -->
+              <ul class="list-group list-group-flush" id="task-list">
+                <li class="list-group-item mb-1 bg-primary text-white rounded-1 d-flex justify-content-between align-items-center">
+                  <input type="checkbox" class="form-check-input rounded-1">
+                    Example Task
+                    <span class="delete-btn" onclick="deleteTask(this)">
+                      <svg class = "delete-btn-img" fill="#ffffff" width="24"  height="24" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"/><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"/><g id="SVGRepo_iconCarrier"><path d="M697.4 759.2l61.8-61.8L573.8 512l185.4-185.4-61.8-61.8L512 450.2 326.6 264.8l-61.8 61.8L450.2 512 264.8 697.4l61.8 61.8L512 573.8z"/></g></svg>
+                    </span>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- Custom JS -->
+   <script src = "script.js"></script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
