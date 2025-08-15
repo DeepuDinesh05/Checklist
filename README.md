@@ -1,4 +1,4 @@
-# Checklist- A To-Do application
+# Checklist - A To-Do application
 
 <img width="1919" height="864" alt="image" src="https://github.com/user-attachments/assets/98c94c34-ef1a-4b0d-9b7a-9331309fcc89" />
 
