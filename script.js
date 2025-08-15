@@ -1,3 +1,22 @@
+// --------- FILE IMPORT FUNCTIONS --------- //
+
+function toggleFileInputVisibility() 
+{
+    console.log('Button clicked'); // Debugging line to check if the function is being triggered
+    if (importForm.style.display === 'none' || importForm.style.display === '') {
+        importForm.style.display = 'block';
+    } else {
+        importForm.style.display = 'none';
+    }
+}
+
+const importTaskButton = document.getElementById('import-task-btn');
+const importForm = document.getElementById('ImportFileForm');
+importTaskButton.addEventListener('click', toggleFileInputVisibility);
+
+
+// --------- TASK ADDITION/DELETION FUNCTIONS --------- //
+
 // Add new task functionality
 document.getElementById('add-task-btn').addEventListener('click', function() 
 {

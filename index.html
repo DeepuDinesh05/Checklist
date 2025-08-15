@@ -38,12 +38,22 @@
                 <input type="text" id="new-task-input" class="form-control" placeholder="Add a new task..." />
                 <button id="add-task-btn" class="btn btn-success">Add Task</button>
               </div>
-
+              
               <!-- Import / Export -->
-              <p class="mb-3 mr-2 mt-3" style="text-align: center;">
-                <button id="add-task-btn" class="btn btn-warning rounded-1">Import Tasks</button>
-                <button id="add-task-btn" class="btn btn-danger rounded-1">Export Tasks</button>
+              <p id="ExportButtonContainer" class="mb-3 mr-2 mt-3" style="text-align: center;">
+                <button id="import-task-btn" class="btn btn-warning rounded-1">Import Tasks</button>
+                <button id="export-task-btn" class="btn btn-danger rounded-1">Export Tasks</button>
               </p>
+              
+              <!-- Import Form -->
+              <form class="mb-3" id="ImportFileForm" style="display: none;">
+                <div>
+                  <label for="formFile" class="form-label">
+                    Upload your task file here.
+                  </label> 
+                  <input class="form-control" type="file" id="formFile"> 
+                </div>
+              </form>
 
               <!-- To-Do List -->
               <ul class="list-group list-group-flush" id="task-list">

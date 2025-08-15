@@ -20,6 +20,8 @@ section
     padding-top: 2em;
 }
 
+/* ---------- BUTTONS ---------- */
+
 .delete-btn-img
 {
     transition: transform 0.2s ease;
@@ -41,6 +43,8 @@ section
     transform: scale(1.1);
     /* background-color: #F0AD4E !important; */
 }
+
+/* ---------- FORMS ---------- */
 
 .form-check-input {
     background-color: whitesmoke; /* Light gray color */
