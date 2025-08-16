@@ -30,7 +30,7 @@ function LoadTasks()
     console.log(taskvalues);
     for (let index = 0; index < taskvalues.length; index += 2) 
     {
-      const taskname = taskvalues[index].trim();  // Even index = task name
+      let taskname = taskvalues[index].trim();  // Even index = task name
       let taskvalue = taskvalues[index + 1].trim();  // Odd index = task value ("true" or "false")
 
       // Convert taskvalue ("true" or "false") to boolean
