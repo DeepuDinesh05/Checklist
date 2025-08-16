@@ -34,6 +34,7 @@ function LoadTasks()
       let taskvalue = taskvalues[index + 1].trim();  // Odd index = task value ("true" or "false")
 
       // Convert taskvalue ("true" or "false") to boolean
+      taskname = taskname.replace(/_+/g, ' '); // Replace underscores with spaces
       taskvalue = (taskvalue === "true");
 
       // Add the task to the list
