@@ -9,9 +9,9 @@ It was created as a personal project/tool to assist me with my game development 
 # Features
 - Add/Delete tasks
 - Import/Export tasks to and from users device
+- Save state for tasks, allowing you to close the browser and continue session at another time!
 
-# WIP Functions
+# To Do
 - Import tasks from text files
-- Try to implement saving tasks, maybe using cookies
 - Export tasks
 - Light-Theme/Dark-Theme toggle
