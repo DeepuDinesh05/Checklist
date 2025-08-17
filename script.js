@@ -73,12 +73,30 @@ function ImportTasks()
   
   if(file)
   {
-    // Read the file as text
-        const reader = new FileReader();
-        reader.onload = function (event) {
-            console.log('File contents:', event.target.result);
-        };
-        reader.readAsText(file);
+      // Read the file as text
+      const reader = new FileReader();
+      reader.onload = function (event) 
+      {
+        let tasks = event.target.result.split(';');
+        console.log("Imported file!");
+        console.log("Tasks in file:",tasks);
+        
+        tasks.forEach(task =>
+        {
+          if(task != null || task != undefined || task != "")
+          {
+            let taskval = task.split(",");
+            const name = taskval[0].trim();
+            const val = taskval[1].trim();
+            console.log(name,"=",val);
+            
+            deleteDefaultTask();
+            AddTaskModular(name,val);
+          }
+        });
+        
+      };
+      reader.readAsText(file);
   }
     
 }
@@ -95,6 +113,8 @@ function deleteTask(element)
 {
   const taskItem = element.closest('li');
   taskItem.remove();
+
+  SaveAllCurrentTasks();
 }
 
 function deleteDefaultTask() 
@@ -131,7 +151,7 @@ function AddTask()
     taskList.appendChild(newTask);
     taskInput.value = ''; // Clear the input field
 
-    SaveAllCurrentTasks(taskList)
+    SaveAllCurrentTasks()
   }
 };
 
@@ -155,7 +175,14 @@ function AddTaskModular(name, val)
   const checkbox = newTask.querySelector('input[type="checkbox"]');
 
   // Set the checkbox checked state based on the val parameter
-  checkbox.checked = val;
+  if(val === "true")
+  {
+    checkbox.checked = val;
+  }
+  else
+  {
+    checkbox.checked = false;
+  }
         
   taskList.appendChild(newTask);
   taskInput.value = ''; // Clear the input field
@@ -167,8 +194,9 @@ addtaskButton.addEventListener('click', AddTask);
 
 // --------- COOKIE - DATA PERSISTENCE --------- //
 
-function SaveAllCurrentTasks(tasklistgrp)
+function SaveAllCurrentTasks()
 {
+  const tasklistgrp = document.getElementById('task-list');
   const tasksarr = tasklistgrp.getElementsByClassName('list-group-item');
   let CurrentTasksSaved = ""; 
 
