@@ -103,6 +103,49 @@ function ImportTasks()
 
 fileinput.addEventListener('change',ImportTasks);
 
+// --------- FILE EXPORT FUNCTIONS --------- //
+
+const ExportTasksButton = document.getElementById('export-task-btn');
+ExportTasksButton.addEventListener('click',ExportTasks);
+
+function ExportTasks() 
+{
+  //Init export data variable
+  const tasklistgrp = document.getElementById('task-list');
+  const tasksarr = tasklistgrp.getElementsByClassName('list-group-item');
+  let exportData = "";
+
+  Array.from(tasksarr).forEach(task => 
+  {
+    const taskText = Array.from(task.childNodes)
+      .filter(node => node.nodeType === Node.TEXT_NODE)
+      .map(node => node.textContent.trim())
+      .join("");
+
+    const checkbox = task.querySelector('input[type="checkbox"]');
+    const isChecked = checkbox.checked;
+
+    if (taskText) 
+    {
+      // Append task in format => task name,checkbox value
+      exportData += `${taskText},${isChecked};\n`;
+    }
+  });
+
+  // Create a blob with the data
+  const blob = new Blob([exportData], { type: "text/plain" });
+
+  // Create a temporary link
+  const link = document.createElement("a");
+  link.href = URL.createObjectURL(blob);
+  link.download = "tasks.txt"; // Default filename
+
+  // Trigger download
+  link.click();
+
+  // Clean up
+  URL.revokeObjectURL(link.href);
+}
 
 // --------- TASK ADDITION/DELETION FUNCTIONS --------- //
 
