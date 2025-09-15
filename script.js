@@ -114,6 +114,7 @@ function deleteTask(element)
   const taskItem = element.closest('li');
   taskItem.remove();
 
+  deleteAllCookies();
   SaveAllCurrentTasks();
 }
 
@@ -125,6 +126,24 @@ function deleteDefaultTask()
     firstTask.remove();  // Remove the first task
   }
   
+}
+
+function deleteAllTasks() 
+{
+  const taskList = document.getElementById('task-list');
+
+  // Remove all child nodes
+  while (taskList.firstChild) {
+    taskList.removeChild(taskList.firstChild);
+  }
+
+  // Clear cookies
+  document.cookie.split(";").forEach(cookie => {
+    const name = cookie.split("=")[0].trim();
+    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  });
+
+  console.log("All tasks deleted.");
 }
 
 //Add task function
@@ -202,7 +221,7 @@ function SaveAllCurrentTasks()
 
   Array.from(tasksarr).forEach(task => 
   {
-    const taskText = task.childNodes[1].nodeValue;
+    const taskText = task.childNodes[1].textContent.trim();
     
     const checkbox = task.querySelector('input[type="checkbox"]');
     const isChecked = checkbox.checked;
@@ -216,6 +235,19 @@ function SaveAllCurrentTasks()
 
   });
 
+}
+
+function deleteAllCookies() 
+{
+  // Split cookies into array
+  document.cookie.split(";").forEach(cookie => {
+    const cookieName = cookie.split("=")[0].trim();
+
+    // Overwrite with past expiry date
+    document.cookie = cookieName + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+  });
+
+  console.log("All cookies deleted!");
 }
 
 function SetCookie(newtaskText, value)
