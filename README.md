@@ -12,6 +12,5 @@ It was created as a personal project/tool to assist me with my game development 
 - Save state for tasks, allowing you to close the browser and continue session at another time!
 
 # To Do
-- Import tasks from text files
-- Export tasks
-- Light-Theme/Dark-Theme toggle
+- Light/Dark Theme Toggle
+- Task Reordering
